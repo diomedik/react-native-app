@@ -1,24 +1,9 @@
-import {observable, action, computed, makeAutoObservable, makeObservable} from 'mobx';
-import {googleTranslateApi} from '../api/translate';
+import {configureStore} from '@reduxjs/toolkit';
+import translateSlice from './reducers';
 
-export class TranslateStore {
-    valueToTranslate = '';
-    translatedValue = '';
-    source = 'ru';
-    target = 'en';
-    constructor() {
-        makeAutoObservable(this);
-        this.handleValue = this.handleValue.bind(this);
-    }
-    @computed handleValue(value: string) {    
-        this.valueToTranslate = value;
-    }
-    @computed translateValue() {
-        const data = {
-            q: this.translateValue,
-            source: this.source,
-            target: this.target
-        };
-        googleTranslateApi(data);
-    }
-}
+export default configureStore({
+    reducer: {
+        Translater: translateSlice
+    },
+    devTools: true
+});

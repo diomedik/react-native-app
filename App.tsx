@@ -1,9 +1,12 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 import {Root} from './android/app/root';
-import {TranslateStore} from './android/app/src/store/store';
-
-const store = new TranslateStore();
+import store from './android/app/src/store/store';
 
 export default function App() {
-    return <Root store={store} />;
+    return (
+        <Provider store={store}>
+            <Root />
+        </Provider>
+    );
 }

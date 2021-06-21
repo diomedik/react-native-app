@@ -1,33 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Input} from './src/components/input/input';
-import {TranslateStore} from './src/store/store';
+import {CategoryContainer} from './src/modules/Translater-container/Category-container';
 
-type Props = {
-    store: any;
-};
+type Props = {};
 
 export class Root extends React.Component<Props> {
     render() {
-        const {translatedValue, valueToTranslate, handleValue} = this.props.store;
-        return (
-            <View style={styles.container}>
-                <Text>Simple translator</Text>
-                <Input
-                    placeholder="Введите..."
-                    onChangeText={(value: string) => handleValue(value)}
-                />
-                <Input placeholder="Result" value={valueToTranslate} />
-            </View>
-        );
+        return <CategoryContainer />;
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});

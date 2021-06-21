@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "axios": "^0.21.1",
     "expo": "~40.0.0",
     "expo-splash-screen": "~0.8.0",
@@ -22,10 +23,13 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-screens": "~2.15.0",
     "react-native-unimodules": "^0.13.0",
-    "react-native-web": "^0.15.0"
+    "react-native-web": "^0.15.0",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@redux-devtools/core": "^3.9.0",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",

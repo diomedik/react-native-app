@@ -1,9 +1,9 @@
 import axios, {AxiosRequestConfig} from 'axios';
 
 export const resource = ({url, method, data, headers}: AxiosRequestConfig) =>
-    axios({
+    axios.request({
         url,
         method,
         headers,
-        data
-    });
+        params: data
+    })
